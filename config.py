@@ -15,20 +15,20 @@ def is_enabled(value, default):
 
 
 # Mandatory variables for the bot to start
-API_ID = int(os.environ.get("API_ID"))  # API ID from https://my.telegram.org/auth
-API_HASH = os.environ.get("API_HASH")  # API Hash from https://my.telegram.org/auth
-BOT_TOKEN = os.environ.get("BOT_TOKEN")  # Bot token from @BotFather
+API_ID = 1923471
+API_HASH = "fcdc178451cd234e63faefd38895c991"
+BOT_TOKEN = "5718312254:AAH-IRpGjc7e-8nfV1TJhgebzBfbbgMVHKA"
 ADMINS = (
-    [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
+    [int(i.strip()) for i in os.environ.get("ADMINS", 880087645).split(",")]
     if os.environ.get("ADMINS")
     else []
 )
 
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
 DATABASE_URL = os.environ.get(
-    "DATABASE_URL", None
+    "DATABASE_URL", "mongodb+srv://Erichdaniken:Erichdaniken@cluster0.vhu3d.mongodb.net/?retryWrites=true&w=majority"
 )  # mongodb uri from https://www.mongodb.com/
-OWNER_ID = int(os.environ.get("OWNER_ID"))  # id of the owner
+OWNER_ID = int(os.environ.get("OWNER_ID", 880087645))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
@@ -37,19 +37,19 @@ LOG_CHANNEL = int(
 )  # log channel for information about users
 UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", False)  # For Force Subscription
 BROADCAST_AS_COPY = is_enabled(
-    (os.environ.get("BROADCAST_AS_COPY", "False")), False
+    (os.environ.get("BROADCAST_AS_COPY", "True")), False
 )  # true if forward should be avoided
 IS_PRIVATE = is_enabled(
     os.environ.get("IS_PRIVATE", "False"), "False"
 )  # true for private use and restricting users
 SOURCE_CODE = os.environ.get(
-    "SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2"
+    "SOURCE_CODE", "https://github.com/Jegaa1/URL-Shortener-V2"
 )  # for upstream repo
 WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")  # image when someone hit /start
 LINK_BYPASS = is_enabled(
     (os.environ.get("LINK_BYPASS", "False")), False
 )  # if true, urls will be bypassed
-BASE_SITE = os.environ.get("BASE_SITE", "droplink.co")  # your shortener site domain
+BASE_SITE = os.environ.get("BASE_SITE", "tnlink.in")  # your shortener site domain
 
 # For Admin use
 CHANNELS = is_enabled((os.environ.get("CHANNELS", "True")), True)
@@ -94,6 +94,17 @@ KOYEB = (
     if KOYEB_APP_NAME and KOYEB_USERNAME
     else False
 )
+
+
+#  Render Config for Hosting in RENDER
+RENDER_USERNAME = os.environ.get("RENDER_USERNAME", None)  # your koyeb username
+RENDER_APP_NAME = os.environ.get("RENDER_APP_NAME", None)  # your koyeb app name
+RENDER = (
+    f"https://{RENDER_APP_NAME}-{RENDER_USERNAME}.onrender.com/"
+    if RENDER_APP_NAME and RENDER_USERNAME
+    else False
+)
+
 
 PING_INTERVAL = int(os.environ.get("PING_INTERVAL", "300"))
 
