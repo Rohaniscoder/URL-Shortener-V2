@@ -11,10 +11,3 @@ aiofiles
 validators
 python-dotenv
 random-user-agent
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
