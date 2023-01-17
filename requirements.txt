@@ -1,11 +1,9 @@
-Flask==2.2.2
-gunicorn==20.1.0
 aiohttp==3.8.1
 pymongo[srv]==3.12.3
 motor==2.5.1
 Pyrogram==2.0.30
 TgCrypto==1.2.3
-PyBypass
+PyBypass==2.0.1
 mdisky
 heroku3
 shortzy
@@ -13,3 +11,10 @@ aiofiles
 validators
 python-dotenv
 random-user-agent
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
