@@ -28,6 +28,7 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
+            bot_token1=BOT_TOKEN1,
             plugins=dict(root="plugins"),
         )
 
