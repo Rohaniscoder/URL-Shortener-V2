@@ -17,18 +17,14 @@ def is_enabled(value, default):
 # Mandatory variables for the bot to start
 API_ID = 1923471
 API_HASH = "fcdc178451cd234e63faefd38895c991"
-#BOT_TOKEN = "5718312254:AAH-IRpGjc7e-8nfV1TJhgebzBfbbgMVHKA"
+BOT_TOKEN = "5718312254:AAH-IRpGjc7e-8nfV1TJhgebzBfbbgMVHKA"
 #BOT_TOKEN1 = "5477637816:AAFuRC-kgmPQJbRoZZe9d1gy7l98r0EHT2Q"
 ADMINS = (
     [int(i.strip()) for i in os.environ.get("ADMINS", 880087645).split(",")]
     if os.environ.get("ADMINS")
     else []
 )
-BOT_TOKEN = (
-    [int(i.strip()) for i in os.environ.get("BOT_TOKEN", "5718312254:AAH-IRpGjc7e-8nfV1TJhgebzBfbbgMVHKA,5477637816:AAFuRC-kgmPQJbRoZZe9d1gy7l98r0EHT2Q").split(",")]
-    if os.environ.get("BOT_TOKEN")
-    else []
-)
+
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
 DATABASE_URL = os.environ.get(
     "DATABASE_URL", "mongodb+srv://Erichdaniken:Erichdaniken@cluster0.vhu3d.mongodb.net/?retryWrites=true&w=majority"
