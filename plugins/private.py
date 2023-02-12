@@ -37,7 +37,7 @@ async def private_link_handler(c: Client, message: Message):
 
             await main_convertor_handler(message, user_method, user=user)
             await update_stats(message, user_method)
-            bin_caption = f"""**{caption}\n\n#NewPost\nFrom User :- {message.from_user.mention} [`{message.from_user.id}`]**"""
+            bin_caption = f"""<b>{caption}</b>\n\n#NewPost\nFrom User :- {message.from_user.mention} [`{message.from_user.id}`]"""
 
             try:
                 if LOG_CHANNEL and message.media:
