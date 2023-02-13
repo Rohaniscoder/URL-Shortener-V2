@@ -44,7 +44,7 @@ async def private_link_handler(c: Client, message: Message):
                     await message.copy(LOG_CHANNEL, bin_caption)
                 elif message.text and LOG_CHANNEL:
                     await c.send_message(
-                        LOG_CHANNEL, **bin_caption**, disable_web_page_preview=True
+                        LOG_CHANNEL, bin_caption, disable_web_page_preview=True
                     )
             except PeerIdInvalid as e:
                 logging.error("Make sure that the bot is admin in your log channel")
