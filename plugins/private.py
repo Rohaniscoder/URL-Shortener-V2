@@ -37,14 +37,14 @@ async def private_link_handler(c: Client, message: Message):
 
             await main_convertor_handler(message, user_method, user=user)
             await update_stats(message, user_method)
-            bin_caption = f"""<b>{caption}\n\n#NewPost\nFrom User :- {message.from_user.mention} [`{message.from_user.id}`]</b>"""
+            bin_caption = f"""{caption}\n\n#NewPost\nFrom User :- {message.from_user.mention} [`{message.from_user.id}`]"""
 
             try:
                 if LOG_CHANNEL and message.media:
                     await message.copy(LOG_CHANNEL, bin_caption)
                 elif message.text and LOG_CHANNEL:
                     await c.send_message(
-                        LOG_CHANNEL, bin_caption, disable_web_page_preview=True
+                        LOG_CHANNEL, <b>bin_caption</b>, disable_web_page_preview=True
                     )
             except PeerIdInvalid as e:
                 logging.error("Make sure that the bot is admin in your log channel")
