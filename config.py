@@ -56,7 +56,7 @@ BASE_SITE = os.environ.get("BASE_SITE", "tnlink.in")  # your shortener site doma
 CHANNELS = is_enabled((os.environ.get("CHANNELS", "True")), True)
 CHANNEL_ID = (
     [int(i.strip()) for i in os.environ.get("CHANNEL_ID", "-100798404894").split(" ")]
-    if os.environ.get("CHANNEL_ID")
+    if os.environ.get("CHANNEL_ID", "-100798404894")
     else []
 )
 
