@@ -15,7 +15,7 @@ def is_enabled(value, default):
 
 
 # Mandatory variables for the bot to start
-API_ID = ""
+API_ID = 21922949
 API_HASH = ""
 BOT_TOKEN = ""
 #BOT_TOKEN1 = "5477637816:AAFuRC-kgmPQJbRoZZe9d1gy7l98r0EHT2Q"
