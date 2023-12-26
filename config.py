@@ -14,10 +14,11 @@ def is_enabled(value, default):
         return default
 
 
-# Mandatory variables for the bot to start
-API_ID = 21922949
-API_HASH = ""
-BOT_TOKEN = ""
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+API_ID = os.environ.get("API_ID", "")
+API_HASH = os.environ.get("API_HASH", "")
+
 #BOT_TOKEN1 = "5477637816:AAFuRC-kgmPQJbRoZZe9d1gy7l98r0EHT2Q"
 ADMINS = (
     [int(i.strip()) for i in os.environ.get("ADMINS", 880087645).split(",")]
